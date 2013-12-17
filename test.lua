@@ -1,5 +1,7 @@
 function rest(poke, length)
-  poke.powerpoints = poke.powerpoints + length/2  
+  poke.powerpoints = poke.powerpoints + length/2
+  poke.health = poke.health + length
+
 end
 
 function pp(poke)
@@ -20,6 +22,8 @@ function pp(poke)
     print("   " .. poke.attack[i])
   end
   print('----------------------------------------')
+  
+  return 10
 end
 
 pokemon  = {type={"steel","ground"}, 
@@ -47,9 +51,20 @@ pokemon3 = {type={"electric"},
             printme=pp, 
             rest=rest} 
 
+print("What is your pokemon's name?")
+pokemon3.name = io.read()
+
 pokemon:rest(10)
 pokemon:printme()
 pokemon2:rest(20)
 pokemon2:printme()
 pokemon3:rest(30)
 pokemon3:printme()
+
+
+function bob()
+  return "This is bob's string"
+end
+
+result = bob()
+print(result)
